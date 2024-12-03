@@ -25,4 +25,11 @@ class MahasiswaController extends Controller
         return redirect()->back()->with('success', 'Data mahasiswa berhasil disimpan');
     }
 
+    public function destroy($id)
+    {
+        Mahasiswa::findOrFail($id)->delete();
+        return redirect()->back()->with('success', 'Data mahasiswa berhasil dihapus');
+    }
+
+
 }

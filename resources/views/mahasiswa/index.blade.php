@@ -25,6 +25,7 @@
                 <th>NPM</th>
                 <th>Nama</th>
                 <th>Prodi</th>
+                <th>Aksi</th>
             </tr>
         </thead>
         <tbody>
@@ -34,6 +35,13 @@
                     <td>{{ $m->npm }}</td>
                     <td>{{ $m->nama }}</td>
                     <td>{{ $m->prodi }}</td>
+                    <td>
+                        <form action="{{ route('mahasiswa.destroy', $m->id) }}" method="POST">
+                            @csrf
+                            @method('DELETE')
+                            <button type="submit">Hapus</button>
+                        </form>
+                    </td>
                 </tr>
             @endforeach
         </tbody>
