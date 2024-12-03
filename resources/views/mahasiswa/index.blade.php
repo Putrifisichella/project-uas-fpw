@@ -46,5 +46,6 @@
             @endforeach
         </tbody>
     </table>
+     <a href="{{ route('mahasiswa.export') }}">Export ke Excel</a>
 </body>
 </html>
